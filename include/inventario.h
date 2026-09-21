@@ -17,7 +17,21 @@ struct Item {
     Raridade raridade;
 };
 
+struct Aresta{
+    int destino;
+    int similaridade;
+};
+
+struct Grafo{
+    map<int, Item> vertices;
+    map<int, list<Aresta>> adjacencia;
+};
+
 Raridade classificarRaridade(int valor);
 void inserirItem(list<Item> &inventario_provisorio, Item novo_item);
+bool inserirVertice(Grafo &inventario, Item item);
+bool existeItem(const Grafo &inventario, int id);
+bool inserirSimilaridade(Grafo &inventario, int id1, int id2, int similaridade);
+void exibirSimilaridadesBFS(const Grafo &inventario);
 
 #endif

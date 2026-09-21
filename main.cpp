@@ -27,6 +27,7 @@ int main() {
     SetConsoleCP(CP_UTF8);
 
     list<Item> inventario_provisorio;
+    Grafo inventario;
     int opcao;
 
     while(true) {
@@ -53,31 +54,45 @@ int main() {
 
             break;
         }
-        
-        case 2:
-            construcao();
+
+        case 2: {
+            int quantidade;
+            cin >> quantidade;
+
+            for(int i = 0; i < quantidade; i++){
+                int id1, id2, similaridade;
+                cin >> id1 >> id2 >> similaridade;
+
+                if(!inserirSimilaridade(inventario, id1, id2, similaridade)){
+                    cout << "Par inválido: " << id1 << " " << id2 << endl;
+                }
+            }
+
+            exibirSimilaridadesBFS(inventario);
+            esperar();
             break;
-            
+        }
+
         case 3:
             construcao();
             break;
-        
+
         case 4:
             construcao();
             break;
-        
+
         case 5:
             construcao();
             break;
-        
+
         case 6:
             construcao();
             break;
-        
+
         case 7:
             construcao();
             break;
-        
+
         case 8:
             construcao();
             break;
