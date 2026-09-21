@@ -71,7 +71,7 @@ bool inserirSimilaridade(Grafo &inventario, int id1, int id2, int similaridade){
     return true;
 }
 
-// BFS seguindo o pseudocódigo da aula
+// BFS seguindo o código da aula
 static void buscaEmLargura(const Grafo &inventario, int s, set<int> &marcados){
     queue<int> F;
     set<int> emF;
