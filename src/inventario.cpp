@@ -112,3 +112,27 @@ void exibirSimilaridadesBFS(const Grafo &inventario){
         }
     }
 }
+
+void buscarItensSimilares(const Grafo &inventario, int codigo, const string &jogador, int similaridade){
+    if(!existeItem(inventario, codigo)){
+        cout << "Item nao encontrado." << endl;
+        return;
+    }
+    
+    bool encontrou = false;
+
+    for(const Aresta &aresta : inventario.adjacencia.at(codigo)){
+        const Item &item = inventario.vertices.at(aresta.destino);
+        if(aresta.similaridade > similaridade && item.nome_dono != jogador){
+            cout << "Item: " << item.nome_item << endl;
+            cout << "Dono: " << item.nome_dono << endl;
+            cout << "ID: " << item.id << endl;
+            cout << "Similaridade: " << aresta.similaridade << endl;
+            cout << endl;
+            encontrou = true;
+        }
+    }
+    if(!encontrou){
+        cout << "Nenhum item encontrado." << endl;
+    }
+}
