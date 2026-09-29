@@ -33,5 +33,6 @@ bool inserirVertice(Grafo &inventario, Item item);
 bool existeItem(const Grafo &inventario, int id);
 bool inserirSimilaridade(Grafo &inventario, int id1, int id2, int similaridade);
 void exibirSimilaridadesBFS(const Grafo &inventario);
+void buscarItensSimilares(const Grafo &inventario, int codigo, const string &jogador, int similaridade);
 
 #endif
