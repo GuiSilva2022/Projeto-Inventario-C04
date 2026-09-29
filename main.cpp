@@ -51,6 +51,7 @@ int main() {
 
 
             inserirItem(inventario_provisorio, novo_item);
+            inserirVertice(inventario, novo_item);
 
             break;
         }
@@ -72,11 +73,21 @@ int main() {
             esperar();
             break;
         }
+            
+        case 3: {
+         int codigo;
+         int similaridade;
+         string jogador;
 
-        case 3:
-            construcao();
+         cin >> jogador;
+         cin >> similaridade;
+         cin >> codigo;
+
+         buscarItensSimilares(inventario, codigo, jogador, similaridade);
+         esperar();
             break;
-
+        }
+            
         case 4:
             construcao();
             break;
