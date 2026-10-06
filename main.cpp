@@ -1,5 +1,5 @@
 /*
-    Projeto por:
+    Projeto feito por:
     Guilherme Carlos da Silva - 2034
     Murilo Silva Dal Poggetto - 2351
     Yan de Almeida Gonzaga - 874
